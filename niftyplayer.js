@@ -12,7 +12,10 @@ var FlashHelper =
 
 	getMovie : function (movieName)
 	{
-  	if (navigator.appName.indexOf ("Microsoft") !=-1) return window[movieName];
+  	if (navigator.appVersion.indexOf('Microsoft') != -1 && (navigator.appVersion.indexOf('MSIE 6') != -1 
+                                                                || navigator.appVersion.indexOf('MSIE 7') != -1 
+                                                                || navigator.appVersion.indexOf('MSIE 8') != -1)) 
+                return window[movieName];
 	  else return document[movieName];
 	}
 };
